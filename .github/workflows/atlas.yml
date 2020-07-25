@@ -11,7 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Generate atlas
-      run: montage *.png *.gif -background transparent -resize 512x512 -gravity northwest -extent 512x512 atlas.png
+      run: montage $GITHUB_WORKSPACE/*.png $GITHUB_WORKSPACE/*.gif -background transparent -resize 512x512 -gravity northwest -extent 512x512 atlas.png
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
